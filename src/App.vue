@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="container">
+      <DateHeader />
+      <Vignette v-for="paper in papers" :key="paper.id" :paper="paper" />
+      <InfoFooter />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Vignette from "@/components/Vignette.vue";
+import DateHeader from "@/components/DateHeader.vue";
+import InfoFooter from "@/components/InfoFooter.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "App",
-  components: {
-    HelloWorld
-  }
+  components: { Vignette, DateHeader, InfoFooter },
+  created() {
+    this.$store.dispatch("fetchLatestPapers");
+  },
+  computed: mapGetters({ papers: "getPapers" })
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.container {
+  display: grid;
+  place-items: center;
+  border: 1px solid black;
 }
 </style>
