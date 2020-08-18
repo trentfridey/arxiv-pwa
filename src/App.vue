@@ -25,6 +25,9 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  margin: 0;
+}
 .container {
   display: grid;
   place-items: center;
