@@ -20,8 +20,8 @@ export default {
   height: 20px;
   font-size: 12px;
   color: white;
-  background-color: grey;
-  text-height: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  line-height: 20px;
   font-family: mono;
 }
 </style>
