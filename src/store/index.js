@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { arxiv } from "../constants";
+import { arxiv, formatFeed } from "../constants";
 import { parseString } from "xml2js";
 
 Vue.use(Vuex);
@@ -40,10 +40,11 @@ export default new Vuex.Store({
       try {
         const response = await Vue.axios.get(arxiv);
         parseString(response.data, (err, result) => {
+          let data = formatFeed(result.feed);
           if (err) {
             commit("fetchLatestPapersFailure", err);
           } else {
-            commit("fetchLatestPapersSuccess", result.feed.entry);
+            commit("fetchLatestPapersSuccess", data);
           }
         });
       } catch (err_1) {
