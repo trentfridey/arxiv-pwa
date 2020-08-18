@@ -6,15 +6,15 @@
         <font-awesome-icon v-else icon="caret-down" />
       </div>
       <div class="vignette-header">
-        <div class="vignette-header-text">{{ paper.title[0] }}</div>
-        <div class="vignette-header-text" id="author">{{ author }}</div>
+        <div class="vignette-header-text">{{ paper.title }}</div>
+        <div class="vignette-header-text" id="author">{{ paper.authors }}</div>
       </div>
     </div>
-    <div v-if="expanded" class="vignette-body">
-      {{ paper.summary[0] }}
+    <div v-if="expanded" class="vignette-body" v-katex:auto>
+      {{ paper.summary }}
     </div>
     <div v-if="expanded" class="vignette-footer">
-      <a :href="download" class="vignette-btn">
+      <a v-if="paper.pdf" :href="paper.pdf" class="vignette-btn">
         <font-awesome-icon icon="download" />
       </a>
       <a :href="vanity" class="vignette-btn">
@@ -35,8 +35,8 @@ export default {
     };
   },
   computed: {
-    author: function() {
-      return this.paper.author.map(author => author.name[0]).join(", ");
+    vanity() {
+      return this.paper.id.replace(/arxiv/, "arxiv-vanity");
     }
   },
   methods: {
@@ -60,8 +60,12 @@ export default {
   flex: none;
   cursor: pointer;
   border: 1px solid white;
-  padding: 5px 10px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
   background-color: black;
+  font-size: 30px;
   color: white;
 }
 .vignette-header {
@@ -69,12 +73,16 @@ export default {
 }
 .vignette-header-text {
   text-align: left;
+  padding: 0 10px;
   &#author {
     font-size: 12px;
+    background-color: black;
+    color: white;
   }
 }
 .vignette-body {
   padding: 10px;
+  border: 1px solid black;
 }
 .vignette-footer {
   border: 1px solid black;
@@ -83,12 +91,15 @@ export default {
   justify-content: space-between;
 }
 .vignette-btn {
-  height: 20px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
   flex: 0 1 auto;
-  border: 1px solid black;
+  border: 1px solid white;
   padding: 5px 10px;
   cursor: pointer;
   background-color: black;
   color: white;
+  width: 50px;
 }
 </style>
