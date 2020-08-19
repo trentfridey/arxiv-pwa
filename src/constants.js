@@ -12,7 +12,8 @@ export const formatFeed = feed => {
         $: {
           href: null
         }
-      })["$"].href
+      })["$"].href,
+      date: new Date(entry.updated[0])
     };
   });
 };
