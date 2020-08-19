@@ -75,6 +75,11 @@ export default {
 .vignette-header-text {
   text-align: left;
   padding: 0 10px;
+  &#title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   &#author {
     font-size: 12px;
     color: black;
