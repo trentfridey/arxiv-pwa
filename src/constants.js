@@ -1,5 +1,5 @@
 export const arxiv =
-  "http://export.arxiv.org/api/query?search_query=cat:quant-ph";
+  "http://export.arxiv.org/api/query?search_query=cat:quant-ph&sortBy=submittedDate";
 
 export const formatFeed = feed => {
   return feed.entry.map(entry => {
