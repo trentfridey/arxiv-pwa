@@ -8,6 +8,7 @@
       <div class="vignette-header">
         <div class="vignette-header-text">{{ paper.title }}</div>
         <div class="vignette-header-text" id="author">{{ paper.authors }}</div>
+        <div class="vignette-header-text" id="date">{{ paper.date }}</div>
       </div>
     </div>
     <div v-if="expanded" class="vignette-body" v-katex:auto>
@@ -76,8 +77,11 @@ export default {
   padding: 0 10px;
   &#author {
     font-size: 12px;
-    background-color: black;
-    color: white;
+    color: black;
+  }
+  &#date {
+    font-size: 12px;
+    color: grey;
   }
 }
 .vignette-body {
