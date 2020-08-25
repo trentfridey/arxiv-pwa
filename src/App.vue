@@ -25,12 +25,14 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
 }
 .container {
-  display: grid;
-  place-items: center;
   border: 1px solid black;
+  width: 100vw;
 }
 </style>
