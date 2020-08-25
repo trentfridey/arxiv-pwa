@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div class="detail-header">
+      <span class="detail-header-text" id="detail-title">{{ paper.title }}</span>
+      <span class="detail-header-text" id="detail-authors">{{ paper.authors }}</span>
+      <span class="detail-header-text" id="detail-date">{{ paper.date }}</span>
+    </div>
     <div class="detail-body">
       {{ paper.summary }}
     </div>
@@ -15,6 +20,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   props: {
     paper: Object
@@ -22,16 +28,41 @@ export default {
   computed: {
     vanity() {
       return this.paper.id.replace(/arxiv/, "arxiv-vanity");
-    }
+    },
+    ...mapState({
+      paper: state => state.paperDetail
+    })
   }
 };
 </script>
 
-<style>
-.detail-body {
+<style lang="scss">
+#detail-title {
+  font-weight: bold;
+  font-size: 22px;
+}
+#detail-authors {
+}
+#detail-date {
+  color: grey;
+  font-size: 12px;
+}
+.detail-header {
   padding: 10px;
 }
+.detail-header-text {
+  display: inline-block;
+}
+.detail-body {
+  padding: 10px;
+  font-size: 22px;
+  margin-bottom: 50px;
+}
 .detail-footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+  height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -46,5 +77,6 @@ export default {
   padding: 5px 10px;
   cursor: pointer;
   color: grey;
+  background-color: white;
 }
 </style>

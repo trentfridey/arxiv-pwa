@@ -1,5 +1,5 @@
 <template>
-  <div class="vignette">
+  <div class="vignette" @click="e => viewDetail(paper)">
     <div class="vignette-preview">
       <div class="vignette-header">
         <div class="vignette-header-text" id="title">{{ paper.title }}</div>
@@ -14,6 +14,12 @@
 export default {
   props: {
     paper: Object
+  },
+  methods: {
+    viewDetail(paper) {
+      this.$store.commit("setDetail", paper);
+      this.$router.push("/detail");
+    }
   }
 };
 </script>
