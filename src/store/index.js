@@ -10,7 +10,8 @@ export default new Vuex.Store({
     isLoading: true,
     hasError: false,
     hasSuccess: false,
-    data: []
+    data: [],
+    paperDetail: {}
   },
   mutations: {
     fetchLatestPapersBegin(state) {
@@ -27,6 +28,9 @@ export default new Vuex.Store({
       state.hasError = err;
       state.isLoading = false;
       state.hasSuccess = false;
+    },
+    setDetail(state, paper) {
+      state.paperDetail = paper;
     }
   },
   getters: {
@@ -50,7 +54,7 @@ export default new Vuex.Store({
       } catch (err_1) {
         commit("fetchLatestPapersFailure", err_1);
       }
-    }
+    },
   },
   modules: {}
 });
