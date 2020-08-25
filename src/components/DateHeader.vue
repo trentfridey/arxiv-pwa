@@ -15,7 +15,7 @@ export default {
   height: 20px;
   font-size: 12px;
   color: white;
-  background-color: black;
+  background-color: grey;
   line-height: 20px;
   font-family: mono;
 }
