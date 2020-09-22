@@ -54,7 +54,7 @@ export default new Vuex.Store({
       } catch (err_1) {
         commit("fetchLatestPapersFailure", err_1);
       }
-    },
+    }
   },
   modules: {}
 });

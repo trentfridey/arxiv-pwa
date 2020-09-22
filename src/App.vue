@@ -1,26 +1,19 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+  <v-app>
+    <v-main>
+     <router-view />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
+
 export default {
   name: "App",
-  created() {
-    this.$store.dispatch("fetchLatestPapers");
-  }
+
+
+  data: () => ({
+    //
+  })
 };
 </script>
-
-<style lang="scss">
-* {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-}
-.container {
-  border: 1px solid black;
-}
-</style>

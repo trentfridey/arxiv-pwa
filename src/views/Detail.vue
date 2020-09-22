@@ -1,8 +1,12 @@
 <template>
   <div class="detail">
     <header>
-      <span class="detail-header-text" id="detail-title">{{ paper.title }}</span>
-      <span class="detail-header-text" id="detail-authors">{{ paper.authors }}</span>
+      <span class="detail-header-text" id="detail-title">{{
+        paper.title
+      }}</span>
+      <span class="detail-header-text" id="detail-authors">{{
+        paper.authors
+      }}</span>
       <span class="detail-header-text" id="detail-date">{{ paper.date }}</span>
     </header>
     <main>
