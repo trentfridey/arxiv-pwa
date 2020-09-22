@@ -28,7 +28,6 @@ export default {
 .vignette {
   position: relative;
   width: 100%;
-  background-color: #efefef;
   border: 1px solid rgba(0, 0, 0, 0.1);
   overflow: hidden;
   max-height: 106px;
@@ -50,6 +49,7 @@ export default {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-family: sans-serif;
   &#author {
     font-size: 12px;
     color: black;

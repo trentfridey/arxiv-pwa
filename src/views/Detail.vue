@@ -36,7 +36,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #detail-title {
   font-weight: bold;
   font-size: 22px;
@@ -47,18 +47,19 @@ export default {
   color: grey;
   font-size: 12px;
 }
-.detail-header {
+header {
   padding: 10px;
+  font-family: sans-serif;
 }
 .detail-header-text {
   display: inline-block;
 }
-.detail-body {
+main {
   padding: 10px;
   font-size: 22px;
   margin-bottom: 50px;
 }
-.detail-footer {
+footer {
   position: fixed;
   bottom: 0px;
   width: 100vw;
@@ -67,9 +68,9 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+  background-color: white;
 }
 .detail-btn {
-  height: 30px;
   border-radius: 5px;
   text-align: center;
   line-height: 30px;
@@ -77,6 +78,5 @@ export default {
   padding: 5px 10px;
   cursor: pointer;
   color: grey;
-  background-color: white;
 }
 </style>

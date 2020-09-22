@@ -22,6 +22,5 @@ body {
 }
 .container {
   border: 1px solid black;
-  width: 100vw;
 }
 </style>

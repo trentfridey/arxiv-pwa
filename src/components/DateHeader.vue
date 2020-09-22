@@ -10,6 +10,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
+  position: sticky;
   padding-left: 10px;
   width: 100%;
   height: 20px;
