@@ -4,7 +4,6 @@
       <div class="vignette-header">
         <div class="vignette-header-text" id="title">{{ paper.title }}</div>
         <div class="vignette-header-text" id="author">{{ paper.authors }}</div>
-        <div class="vignette-header-text" id="date">{{ paper.date }}</div>
       </div>
     </div>
   </div>

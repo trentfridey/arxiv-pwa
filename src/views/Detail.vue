@@ -1,21 +1,21 @@
 <template>
-  <div>
-    <div class="detail-header">
+  <div class="detail">
+    <header>
       <span class="detail-header-text" id="detail-title">{{ paper.title }}</span>
       <span class="detail-header-text" id="detail-authors">{{ paper.authors }}</span>
       <span class="detail-header-text" id="detail-date">{{ paper.date }}</span>
-    </div>
-    <div class="detail-body">
+    </header>
+    <main>
       {{ paper.summary }}
-    </div>
-    <div class="detail-footer">
+    </main>
+    <footer>
       <a v-if="paper.pdf" :href="paper.pdf" class="detail-btn">
         <font-awesome-icon icon="download" />
       </a>
       <a :href="vanity" class="detail-btn">
         <font-awesome-icon icon="external-link-alt" />
       </a>
-    </div>
+    </footer>
   </div>
 </template>
 
